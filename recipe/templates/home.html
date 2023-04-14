@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+    {% comment %} <link rel="stylesheet" href="styles/detail.css" /> {% endcomment %}
+    {% comment %} {% if title %}
+    <title>Django Recipes - {{title}}</title>
+    {% else %}
+    <title>Django Recipes</title>
+    {% endif %} {% endcomment %}
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+      <h1>Harsha's Parametric Recipe Finder</h1>
+      <div style="margin-top:50px;margin-left:100px">
+      {% if msg %}
+        <h4 style="margin-top:50px;margin-left:100px;">{{ msg }}</h4>
+      {% endif %}
+      </h5>
+      </div>
+      <div class="box">
+          <form action="home" method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" id="username" placeholder="Username" required/>
+            <br>
+            <input type="password" name="password" id="password" placeholder="Password" required/>
+            <br>
+            <input type="submit" class="button" value="Log In"/>
+          </form>
+      </div>
+
+     <div style="margin-top:50px;margin-left:100px"><h4>Don't have a account? <a href="register">Click Here</a></h4></div>
+     <div id="loading">
+          <img id="loading-image" style="border: none;" src={% static 'loader.gif' %} alt="I am hungry..." />
+    </div>
+ 
+    <div class="" style="margin-top:50px;margin-left:100px">
+      <h2>Registered Users List</h2>
+       <table>
+        <thead>
+        
+          <tr>
+            <th>S.no</th>
+            <th>UserName</th>
+          </tr>   
+        </thead>
+        {%for user in all%}
+        <tbody>
+          <tr>
+            <td>{{forloop.counter}}
+            <td>{{user.username}}
+          </tr>
+        </toboday>
+        {%endfor%}
+      </table>
+    </div>
+
+    <script src="{%static 'jquery-3.3.1.min.js'%}"></script>
+      <script src="{%static 'script.js'%}"></script>
+      <script>
+          $(window).on('load', function () {
+            $('#loading').hide();
+          }) 
+        </script> 
+        
+</body>
+  </body>
+</html>

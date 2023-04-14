@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+    {% comment %} <link rel="stylesheet" href="styles/detail.css" /> {% endcomment %}
+    {% comment %} {% if title %}
+    <title>Django Recipes - {{title}}</title>
+    {% else %}
+    <title>Django Recipes</title>
+    {% endif %} {% endcomment %}
+  </head>
+  <body>
+    {% block content %} {% endblock %}
+    <body>
+      <h1>Harsha's Parametric Recipe Finder</h1>
+      
+
+      <div class="box">
+        <h4 style="margin-top:50px;margin-left:100px">Update The User details </h4>
+          <form action="/home" method="GET">
+            {% csrf_token %}
+            <input type="text" name="username" id="username" placeholder="Username" value={{username}} required/>
+            <br>
+            <input type="text" name="password" id="password" placeholder="Password" value={{password}} required/>
+            <br>
+            <input type="text" name="id" id="id" placeholder="ID" value={{id}} readonly/><br><br>
+            <input type="submit" class="button" value="Update"/>
+          </form>
+          <a href="/?id={{id}}" style="margin-top:30px;width: 270px;margin-left:100px;background-color: #f44336; color: white;padding: 10px 15px;text-align: center;text-decoration: none;display: inline-block;">Delete User<a/>
+      </div>
+      
+</body>
+</html>
