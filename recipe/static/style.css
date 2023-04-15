@@ -58,7 +58,7 @@ select {
     cursor: pointer;
 }
 
-#submit-btn,
+#submit-btn,#submitt-btn,
 #more {
     width: 200px;
     height: 30px;
@@ -70,8 +70,19 @@ select {
     outline: none;
     cursor: pointer;
 }
+#bu{
+    width: 400px;
+    height: 30px;
+    font-size: 20px;
+    margin-left: 50px;
+    border: 2px solid rgb(15, 17, 15);
+    border-radius: 10px;
+    background-color: rgb(46, 25, 25);
+    outline: none;
+    cursor: pointer;
+}
 
-#submit-btn:hover,
+#submit-btn:hover,#submitt-btn:hover,
 #more:hover,
 select:hover,
 a:hover,
@@ -79,7 +90,7 @@ p:hover {
     color: rgb(128, 128, 128);
 }
 
-#submit-btn:hover,
+#submit-btn:hover,#submitt-btn:hover,
 #more:hover {
     border: 2px solid rgb(139, 139, 139);
 }
@@ -178,7 +189,7 @@ a {
         height: 180px;
     }
 
-    #submit-btn {
+    #submit-btn,#submitt-btn {
         margin: 0;
     }
 
@@ -201,7 +212,7 @@ a {
         margin: 10px 20px 20px 0;
     }
 
-    #submit-btn,
+    #submit-btn,#submitt-btn,
     #more {
         width: 80px;
         height: 24px;

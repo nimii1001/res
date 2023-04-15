@@ -2,7 +2,8 @@
     var moreUrl;
     var baseUrl = "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes";
     var results;
-    $("#submit-btn").on("click", function () {
+    $("#submitt-btn").on("click", function () {
+       
         var userInput = $("input[name=user-input]").val();
         var albumOrArtist ='';
 
@@ -39,7 +40,7 @@
     });
 
     function generateResultsHtml(spotifyData) {
-        console.log("spotifyData", spotifyData)
+        console.log("spotifyyData", spotifyData)
         var imgUrl = "/default.jpg";
         var html = "";
         for (var i = 0; i < spotifyData.length; i++) {

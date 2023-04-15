@@ -10,18 +10,22 @@
     </head>
     <body>
         <h1>Harsha's Parametric Recipe Finder</h1>
-        <div id="loading">
-            <img id="loading-image" style="border: none;" src={% static 'loader.gif' %} alt="I am hungry..." />
-          </div>
-        <div style="margin: 10px;margin-left: 3%;" class="search-field">
+        
+        <div style="margin: 10px;margin-left: 17%;margin-bottom:5%" class="search-field">
+          <button id='submit-btn'><a href='home/userlist?id={{id}}'>User List</a></button>
+          <button id='submit-btn'><a href='home/edit?username={{ username}}&password={{password}}&id={{id}}'>Edit User</a></button>
+          <button id='submit-btn'><a href='admin'>Admin</a></button>
+          <button id='bu'>Username:&nbsp{{username}}</button>
+          <a style="margin-left:20px" href="/">Logout</a>
+      </div>
+               
+        <div style="margin: 50px;margin-left: 30%;" class="search-field">
           
             <input type="text" name="user-input" placeholder="Search Recipes / Cuisine"></input>
-            <input type="hidden" id="custId" name="custId" value={{id}}>
-            <button id='submit-btn'>Let's Eat</button>
-            <button id='submit-btn'><a href=''>User List</a></button>
-            <button id='submit-btn'><a href='home/edit?username={{ username}}&password={{password}}&id={{id}}'>Edit User</a></button>
-            <button id='submit-btn'><a href='admin'>Admin</a></button>
-            <button id='submit-btn'>username:&nbsp{{username}}</button>
+            <button id='submitt-btn'>Let's Eat</button>
+        </div>
+        <div id="loading">
+          <img id="loading-image" style="border: none;" src={% static 'loader.gif' %} alt="I am hungry..." />
         </div>
         
         <div id="results-info"></div>

@@ -21,8 +21,8 @@
       <h1>Harsha's Parametric Recipe Finder</h1>
       
 
-      <div class="box">
-        <h4 style="margin-top:50px;margin-left:100px">Update The User details </h4>
+      <div class="box" style="max-width: 600px;margin: auto;">
+        <h4 style="margin-top:50px;margin-left:160px;">Update The User details </h4>
           <form action="/home" method="GET">
             {% csrf_token %}
             <input type="text" name="username" id="username" placeholder="Username" value={{username}} required/>

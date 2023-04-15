@@ -16,9 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('recipeapp.urls'))
 ]
+
+#Modify Site Header
+admin.site.site_header = 'Recipe Administration'
+#Modify Site Title
+admin.site.site_title = 'Recipe Finder Application'
+#Modify Site Index Title
+admin.site.index_title = 'Recipe Administration'
+#Modify Site URL
+admin.site.site_urls= '/admin'

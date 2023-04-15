@@ -7,6 +7,8 @@ from .models import UsersTable
 def login(request):
     obj = UsersTable()
     users = UsersTable.objects.all()
+
+    # Create User
     if request.method == 'POST':
         username = request.POST["username"]
         password = request.POST["password"]
@@ -19,6 +21,8 @@ def login(request):
             obj.save()
             users = UsersTable.objects.all()
             return render(request,'home.html',{"all":users})
+        
+    # Delete User
     if request.method=='GET':
         if "id" in request.GET:
             id = request.GET["id"]
@@ -31,8 +35,8 @@ def login(request):
 def home(request):
     obj = UsersTable()
     users = UsersTable.objects.all()
+    #Login User
     if request.method == 'POST':
-        print("inn22")
         username = request.POST["username"]
         password = request.POST["password"]
         print(username, password)
@@ -45,15 +49,28 @@ def home(request):
             return render (request,'home.html',{"all":users,"msg":"Incorrect Credential! Try Again"})
         
     if request.method == 'GET':
-        username = request.GET["username"]
-        password = request.GET["password"]
-        id = request.GET["id"]
-        user_data = UsersTable.objects.get(id=id)
-        user_data.id = id
-        user_data.username = username
-        user_data.password = password
-        user_data.save()
-        return render(request,'home.html',{"all":users})
+        print("don")
+        if 'username' in request.GET and 'password' in request.GET:
+            username = request.GET["username"]
+            password = request.GET["password"]
+            id = request.GET["id"]
+            user_data = UsersTable.objects.get(id=id)
+            user_data.id = id
+            user_data.username = username
+            user_data.password = password
+            user_data.save()
+            return render(request,'home.html')
+        else:
+            print("don1")
+            id = request.GET["id"]
+            print("iddd",id)
+            user_data = UsersTable.objects.get(id=id)
+            print("userdata",user_data )
+            if user_data:
+                return render (request,'result.html',{"username":user_data.username,"password":user_data.password,"id":user_data.id})
+            else:
+                return render(request,'home.html')
+            
 
 def profile_edit(request):
     username = request.GET.get('username')
@@ -61,8 +78,14 @@ def profile_edit(request):
     id = request.GET.get('id')
     return render(request,'profile_edit.html',{"username":username,"password":password,"id":id})
     
+def user_list(request):
+    obj = UsersTable()
+    users = UsersTable.objects.all()
+    id = request.GET["id"]
+    return render(request,'user_list.html',{"all":users,"id":id})
 
 def register(request):
+
     return render (request,'register.html')
 
 def details(request):

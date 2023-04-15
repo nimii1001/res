@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Receipe Details</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <meta name="robots" content="noindex,follow" />
+
+  </head>
+
+  <body>
+    <h1>User list</h1>
+
+   <div style="max-width: 600px;margin: auto;">
+
+    <div style="position: relative;">
+        <a href="/" style="position: absolute; top: 0; right: 0;margin-right:10px;text-decoration: none;color:green;border:1px solid green;padding:4px"><b>Logout</b></a>
+        <a href="/home?id={{id}}" style="position: absolute; top: 0; right: 0;margin-right:90px;text-decoration: none;color:green;border:1px solid green;padding:4px"><b>Home</b></a>
+    </div>
+       <table>
+        <thead>
+        
+          <tr>
+            <th>S.no</th>
+            <th>UserName</th>
+          </tr>   
+        </thead>
+        {%for user in all%}
+        <tbody>
+          <tr>
+            <td>{{forloop.counter}}
+            <td>{{user.username}}
+          </tr>
+        </toboday>
+        {%endfor%}
+      </table>
+    </div> 
+    
+    <!-- Scripts -->
+    <script src="{% static "jquery-3.3.1.min.js"%}"></script>
+    <script src="{%static 'details.js'%}"></script>
+    <script src="{% static "jquery-3.3.1.min.js"%}"></script>
+    <script src="{%static 'script.js'%}"></script>
+    <script>
+        $(window).on('load', function () {
+          $('#loading').hide();
+        }) 
+      </script>
+  </body>
+</html>

@@ -13,6 +13,7 @@ html, body {
   display: flex;
 }
 
+
 /* Columns */
 .left-column {
   width: 40%;
@@ -222,4 +223,8 @@ html, body {
     width: 220px;
     top: -85px;
   }
+}
+
+a {
+  text-decoration: none;
 }
