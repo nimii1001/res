@@ -42,7 +42,7 @@ def home(request):
             return render (request,'result.html',{"username":userdata[0].username,"password":userdata[0].password,"id":userdata[0].id})
         else:
             users = UsersTable.objects.all()
-            return render (request,'home.html',{"all":users,"msg":"Incorrect Credential"})
+            return render (request,'home.html',{"all":users,"msg":"Incorrect Credential! Try Again"})
         
     if request.method == 'GET':
         username = request.GET["username"]

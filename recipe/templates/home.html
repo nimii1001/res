@@ -8,39 +8,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'style.css' %}" />
     <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
-    {% comment %} <link rel="stylesheet" href="styles/detail.css" /> {% endcomment %}
-    {% comment %} {% if title %}
-    <title>Django Recipes - {{title}}</title>
-    {% else %}
-    <title>Django Recipes</title>
-    {% endif %} {% endcomment %}
   </head>
   <body>
     {% block content %}{% endblock %}
-      <h1>Harsha's Parametric Recipe Finder</h1>
-      <div style="margin-top:50px;margin-left:100px">
-      {% if msg %}
-        <h4 style="margin-top:50px;margin-left:100px;">{{ msg }}</h4>
-      {% endif %}
-      </h5>
+      <h1 style="margin-bottom:200px">Harsha's Parametric Recipe Finder</h1>
       </div>
-      <div class="box">
-          <form action="home" method="POST">
+      <div style="max-width: 600px;margin: auto;">
+          {% if msg %}
+            <h4 style="max-width: 330px;margin: auto;margin-bottom:20px">{{ msg }}</h4>
+          {% endif %}
+
+          <form action="home" method="POST" >
             {% csrf_token %}
             <input type="text" name="username" id="username" placeholder="Username" required/>
             <br>
             <input type="password" name="password" id="password" placeholder="Password" required/>
             <br>
+            <br>
             <input type="submit" class="button" value="Log In"/>
           </form>
       </div>
 
-     <div style="margin-top:50px;margin-left:100px"><h4>Don't have a account? <a href="register">Click Here</a></h4></div>
+    <div style="max-width: 380px;margin: auto;"><h4>Don't have a account? <a href="register">Register Here</a></h4></div>
      <div id="loading">
           <img id="loading-image" style="border: none;" src={% static 'loader.gif' %} alt="I am hungry..." />
     </div>
  
-    <div class="" style="margin-top:50px;margin-left:100px">
+    {% comment %} <div class="" style="margin-top:50px;margin-left:100px"> // style="margin-top:50px;margin-left:100px"
       <h2>Registered Users List</h2>
        <table>
         <thead>
@@ -59,7 +53,7 @@
         </toboday>
         {%endfor%}
       </table>
-    </div>
+    </div> {% endcomment %}
 
     <script src="{%static 'jquery-3.3.1.min.js'%}"></script>
       <script src="{%static 'script.js'%}"></script>
