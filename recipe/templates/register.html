@@ -8,18 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'style.css' %}" />
     <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
-    {% comment %} <link rel="stylesheet" href="styles/detail.css" /> {% endcomment %}
-    {% comment %} {% if title %}
-    <title>Django Recipes - {{title}}</title>
-    {% else %}
-    <title>Django Recipes</title>
-    {% endif %} {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   </head>
   <body>
     {% block content %} {% endblock %}
     <body>
-      <h1>Harsha's Parametric Recipe Finder</h1>
+      <h1>Parametric Recipe Finder</h1>
+      
       <div style="max-width: 600px;margin: auto;margin-top:100px">
+        <h2 style="margin-top:50px;margin-left:200px;">Register <a href="/" style="margin-left:150px">Go Back&nbsp <i class="fa fa-chevron-circle-right"></i></a></h2>
           <form action="/" method="POST">
             {% csrf_token %}
             <input type="text" name="username" id="username" placeholder="Username" required/>
@@ -29,8 +27,5 @@
             <input style="width:303px;margin-top:10px" type="submit" class="button" value="Save"/>
           </form>
       </div>
-     {% comment %} <div id="loading">
-          <img id="loading-image" style="border: none;" src={% static 'loader.gif' %} alt="I am hungry..." />
-    </div> {% endcomment %}
 </body>
 </html>

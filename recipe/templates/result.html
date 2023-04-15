@@ -6,18 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Harsha's Parametric Recipe Finder</title>
         <link rel="stylesheet" href="{% static 'style.css' %}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Harsha's Parametric Recipe Finder</h1>
+      
+        <div>
+          <dl style="float:left;margin-top:15px">
+            <dt style="margin-left:20px;padding:5px;" >Username:&nbsp{{username}}</dt>
+            <dt style="margin-left:20px;padding:5px"><a href='home/edit?username={{ username}}&password={{password}}&id={{id}}'>Update Profile &nbsp<i class="fa fa-edit"></i></a></dt>    
+            <dt style="margin-left:20px;padding:5px" ><a href="/">Logout&nbsp <i class="fa fa-sign-out"></i></a></dt>           
+          </dl>
+        </div>
+        <h1 style="max-width: 900px;margin: auto;margin-top:30px" >Parametric Recipe Finder</h1>
         
-        <div style="margin: 10px;margin-left: 17%;margin-bottom:5%" class="search-field">
-          <button id='submit-btn'><a href='home/userlist?id={{id}}'>User List</a></button>
-          <button id='submit-btn'><a href='home/edit?username={{ username}}&password={{password}}&id={{id}}'>Edit User</a></button>
-          <button id='submit-btn'><a href='admin'>Admin</a></button>
-          <button id='bu'>Username:&nbsp{{username}}</button>
-          <a style="margin-left:20px" href="/">Logout</a>
-      </div>
                
         <div style="margin: 50px;margin-left: 30%;" class="search-field">
           

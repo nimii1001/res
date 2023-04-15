@@ -11,7 +11,7 @@
   </head>
   <body>
     {% block content %}{% endblock %}
-      <h1 style="margin-bottom:200px">Harsha's Parametric Recipe Finder</h1>
+      <h1 style="margin-bottom:200px">Parametric Recipe Finder</h1>
       </div>
       <div style="max-width: 600px;margin: auto;">
           {% if msg %}
@@ -19,17 +19,19 @@
           {% endif %}
 
           <form action="home" method="POST" >
+            <h2 style="margin-top:50px;margin-left:210px;">Login</h2>
             {% csrf_token %}
             <input type="text" name="username" id="username" placeholder="Username" required/>
             <br>
             <input type="password" name="password" id="password" placeholder="Password" required/>
             <br>
             <br>
-            <input style="width:303px;margin-top:10px" type="submit" class="button" value="Log In"/>
+            <input style="width:303px;margin-top:10px;cursor:pointer" type="submit" class="button" value="submit"/>
           </form>
       </div>
 
     <div style="max-width: 380px;margin: auto;"><h4>Don't have a account? <a href="register">Register Here</a></h4></div>
+    <div style="max-width: 290px;margin: auto;"><h4>For Admin - <a href="admin">Click Here</a></h4></div>
      <div id="loading">
           <img id="loading-image" style="border: none;" src={% static 'loader.gif' %} alt="I am hungry..." />
     </div>

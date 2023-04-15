@@ -48,8 +48,7 @@ def home(request):
             users = UsersTable.objects.all()
             return render (request,'home.html',{"all":users,"msg":"Incorrect Credential! Try Again"})
         
-    if request.method == 'GET':
-        print("don")
+    if request.method == 'GET':       
         if 'username' in request.GET and 'password' in request.GET:
             username = request.GET["username"]
             password = request.GET["password"]
@@ -59,11 +58,10 @@ def home(request):
             user_data.username = username
             user_data.password = password
             user_data.save()
-            return render(request,'home.html')
+            updated_user_data = UsersTable.objects.get(id=id)
+            return render (request,'result.html',{"username":updated_user_data.username,"password":updated_user_data.password,"id":updated_user_data.id})
         else:
-            print("don1")
             id = request.GET["id"]
-            print("iddd",id)
             user_data = UsersTable.objects.get(id=id)
             print("userdata",user_data )
             if user_data:
